@@ -1,5 +1,7 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import DatePickerCalender from './DatePickerCalender';
 
 
 type Props = {
@@ -15,9 +17,15 @@ export default function CardInput({ label, typeofInput
 }: Props) {
     const [option, setOption] = useState<string | undefined>(undefined);
     const [selected, setSelected] = useState<string | null>(null);
+    const [description, setDescription] = useState<string>('');
+    const [date, setDate] = useState<Date>(new Date());
 
     var possibleTypeofInput = ['select', 'number', 'text', 'date', 'option']
     console.log('o component foi alterado em cardinput', selected)
+
+    const changeStateInput = () => {
+    }
+
     //    <View style={styles.cardContainer}>
     //         <Text style={{padding:10}}>Value</Text>
     //         <View style={styles.inputContainer}>
@@ -44,9 +52,25 @@ export default function CardInput({ label, typeofInput
 
     //code to entry and exit mony
     {/* <EntryExitSelector selected={selected} setSelected={setSelected} /> */ }
+
+    //code to display text area
+    //  <TextInput
+    //             style={styles.texAreaInput}
+    //             placeholder="Adicione uma breve descrição sobre o movimento"
+    //             multiline // permite várias linhas
+    //             numberOfLines={3} // altura inicial em linhas
+    //             value={description}
+    //             onChangeText={(text) => setDescription(text)} // ou salvar no estado
+    //         />
+
+
     return (
         <View style={styles.cardContainer}>
             <Text style={{ padding: 10 }}>{label}</Text>
+            <View style={styles.inputContainer}>
+                <MaterialIcons style={styles.iconStyle} size={24} name={'download-for-offline'} />
+                <DatePickerCalender date={date} setDate={setDate} />
+            </View>
         </View>
 
     )
@@ -77,5 +101,11 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50
     },
-
+    texAreaInput: {
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 5,
+        borderRadius: 5,
+        textAlignVertical: 'top'
+    }
 })
