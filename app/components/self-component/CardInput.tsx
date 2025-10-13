@@ -3,6 +3,7 @@ import { Picker } from '@react-native-picker/picker';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import DatePickerCalender from './DatePickerCalender';
+import EntryExitSelector from './EntryExitSelector';
 
 type Props = {
   label: string;
@@ -26,7 +27,7 @@ export default function CardInput({ label, typeofInput }: Props) {
       {/* Input numérico simples */}
       <Text style={styles.label}>Valor</Text>
       <View style={styles.inputContainer}>
-        <MaterialIcons style={styles.iconStyle} size={24} name="download-for-offline" />
+        <MaterialIcons style={styles.iconStyle} size={20} name="download-for-offline" />
         <TextInput style={styles.textInputPlaceholder} placeholder="0.0" textAlign="left" keyboardType="numeric" />
       </View>
 
@@ -43,13 +44,15 @@ export default function CardInput({ label, typeofInput }: Props) {
         </Picker>
       </View>
 
+      <EntryExitSelector selected={selected} setSelected={setSelected} />
+
       {/* Área de texto */}
       <Text style={styles.label}>Descrição</Text>
       <TextInput
         style={styles.textAreaInput}
-        placeholder="Adicione uma breve descrição sobre o movimento"
+        placeholder={"Adicione uma breve descrição sobre o movimento\n\n\n"}
         multiline
-        numberOfLines={3}
+        numberOfLines={4}
         value={description}
         onChangeText={setDescription}
       />
@@ -57,7 +60,6 @@ export default function CardInput({ label, typeofInput }: Props) {
       {/* Seletor de data */}
       <Text style={styles.label}>{label}</Text>
       <View style={[styles.inputContainer, { justifyContent: 'space-between' }]}>
-        <MaterialIcons style={styles.iconStyle} size={24} name="event" />
         <DatePickerCalender date={date} setDate={setDate} />
       </View>
     </View>
@@ -66,15 +68,18 @@ export default function CardInput({ label, typeofInput }: Props) {
 
 const styles = StyleSheet.create({
   cardContainer: {
+    marginTop: 10,
     width: '100%',
+    height: "95%",
     flexDirection: 'column',
     padding: 10,
     gap: 12,
   },
   label: {
-    padding: 5,
     fontWeight: '500',
+    margin:0
   },
+  
   inputContainer: {
     padding: 5,
     flexDirection: 'row',
@@ -82,6 +87,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#c6b0b0ff',
     borderWidth: 1,
+    margin: 0,
+    marginBottom: 20
   },
   iconStyle: {
     marginRight: 10,

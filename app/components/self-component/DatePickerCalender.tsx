@@ -19,7 +19,7 @@ export default function DatePickerCalender({ date, setDate }: Props) {
   return (
     <View style={styles.wrapper}>
       <TouchableOpacity style={styles.container} onPress={() => setShow(true)}>
-        <MaterialIcons name="calendar-today" size={20} color="black" />
+        <MaterialIcons name="calendar-today" size={16} color="black" />
         <Text style={styles.dateText}>
           {date.toLocaleDateString('pt-BR', {
             day: '2-digit',
