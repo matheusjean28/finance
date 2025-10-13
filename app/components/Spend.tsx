@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native'
 import CanSpendToday from './self-component/CanSpendToday'
+import UpcommingBills from './self-component/UpcommingBills'
 
 type Props = {}
 
@@ -7,6 +8,7 @@ export default function Spend() {
     return (
         <View style={styles.container}>
             <CanSpendToday />
+            <UpcommingBills/>
         </View>
     )
 }
