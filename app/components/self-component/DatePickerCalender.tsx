@@ -1,51 +1,60 @@
-
-
+import { MaterialIcons } from '@expo/vector-icons'; // ou react-native-vector-icons/MaterialIcons
 import DateTimePicker from '@react-native-community/datetimepicker';
 import React, { useState } from 'react';
-import { Button, Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type Props = {
-    date: Date;
-    setDate: React.Dispatch<React.SetStateAction<Date>>;
-}
+  date: Date;
+  setDate: React.Dispatch<React.SetStateAction<Date>>;
+};
 
 export default function DatePickerCalender({ date, setDate }: Props) {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-    const onChange = (event: any, selectedDate?: Date) => {
-        setShow(Platform.OS === 'ios'); //ios
-        if (selectedDate) setDate(selectedDate);
-    };
-    return (
-        <View style={styles.container}>
-            <Text style={styles.label}>Data selecionada:</Text>
-            <Text style={styles.dateText}>{date.toLocaleDateString()}</Text>
+  const onChange = (event: any, selectedDate?: Date) => {
+    setShow(Platform.OS === 'ios'); // keep IOS open
+    if (selectedDate) setDate(selectedDate);
+  };
 
-            <Button title="Escolher data" onPress={() => setShow(true)} />
+  return (
+    <View style={styles.wrapper}>
+      <TouchableOpacity style={styles.container} onPress={() => setShow(true)}>
+        <MaterialIcons name="calendar-today" size={20} color="black" />
+        <Text style={styles.dateText}>
+          {date.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+          })}
+        </Text>
+      </TouchableOpacity>
 
-            {show && (
-                <DateTimePicker
-                    value={date}
-                    mode="date"
-                    display="default"
-                    onChange={onChange}
-                />
-            )}
-        </View>
-    );
+      {show && (
+        <DateTimePicker
+          value={date}
+          mode="date"
+          display="default"
+          onChange={onChange}
+        />
+      )}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        marginTop: 10,
-    },
-    label: {
-        fontSize: 16,
-        fontWeight: '500',
-        marginBottom: 4,
-    },
-    dateText: {
-        fontSize: 16,
-        marginBottom: 10,
-    },
+  wrapper: {
+    width: "100%",
+},
+container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    gap: 8,
+  },
+  dateText: {
+    fontSize: 16,
+    textTransform: 'capitalize',
+  },
 });
