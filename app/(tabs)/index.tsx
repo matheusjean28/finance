@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import AddPayment from '../components/AddPayment';
+import Spend from '../components/Spend';
 
 
 
@@ -9,7 +9,8 @@ export default function Index() {
  
   return (
    <GestureHandlerRootView style={styles.container}>
-    <AddPayment/>
+    {/* <AddPayment/> */}
+    <Spend />
    </GestureHandlerRootView>
   );
 }
@@ -18,6 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,                 
     justifyContent: 'center', 
     alignItems: 'center',     
-    backgroundColor: '#25292e',
+    backgroundColor: '#ffffffff',
   },
 });

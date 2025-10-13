@@ -13,6 +13,8 @@ type Props = {
   setSelected: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
+
+//this component was not completed, we need to define how will be the json that is outputed by then
 export default function CardInput({ label, typeofInput }: Props) {
   const [option, setOption] = useState<string | undefined>(undefined);
   const [selected, setSelected] = useState<string | null>(null);
