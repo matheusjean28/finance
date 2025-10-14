@@ -13,7 +13,7 @@ export default function Spend() {
     return (
         <View style={styles.container}>
             {!popUpStatus? <><CanSpendToday />
-            <UpcommingBills /></> : <Popup/>
+            <UpcommingBills howCall='spend' /></> : <Popup/>
         }</View>
     )
 }
