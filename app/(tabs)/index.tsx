@@ -11,10 +11,11 @@ export default function Index() {
   const [screen, setScreen] = useState<string | null>(null);
   const [popUpStatus,setPopUpStatus] = useState<boolean>(false);
   const {bill} = useAppContext();
+  const {objetivos } = useAppContext()
   console.log(popUpStatus)
 
   return (
-    <AppContext.Provider value={{ screen, setScreen, popUpStatus,setPopUpStatus,bill }}>
+    <AppContext.Provider value={{ screen, setScreen, popUpStatus,setPopUpStatus,bill, objetivos}}>
       <GestureHandlerRootView style={styles.container}>
         <Spend />
       </GestureHandlerRootView>

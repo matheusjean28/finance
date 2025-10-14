@@ -6,6 +6,7 @@ import UpcommingBills from './self-component/UpcommingBills'
 //hook context
 import { useAppContext } from '../context/useAppContext'
 import Popup from './self-component/PopUp'
+import SavingProgress from './self-component/SavingProgress'
 type Props = {}
 
 export default function Spend() {
@@ -16,8 +17,11 @@ export default function Spend() {
                 <>
                     <CanSpendToday />
                     <UpcommingBills howCall='spend' />
-                </> : <Popup />
-            }</View>
+                    <SavingProgress />
+                </> : <Popup  />
+                
+            }
+            </View>
     )
 }
 

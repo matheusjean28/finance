@@ -76,12 +76,23 @@ const bill = {
         }
     };
 
+const objetivos = {
+    viagem: {
+        name:'fundo emergencia',
+        goal: 3000,
+        achived: 399
+    },
+
+}
+
+
 type AppContextType = {
   screen: string | null;
   setScreen: React.Dispatch<React.SetStateAction<string | null>>;
 popUpStatus: boolean;
 setPopUpStatus: React.Dispatch<React.SetStateAction<boolean>>;
 bill: typeof bill
+objetivos: typeof objetivos
 
 };
 
@@ -90,7 +101,8 @@ const AppContext = createContext<AppContextType>({
   setScreen: () => {},
   popUpStatus: false, 
   setPopUpStatus: () => {},
-  bill: bill
+  bill: bill,
+  objetivos:objetivos
 });
 
 export default AppContext;
