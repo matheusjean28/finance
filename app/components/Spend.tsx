@@ -12,9 +12,12 @@ export default function Spend() {
     const { popUpStatus, setPopUpStatus } = useAppContext();
     return (
         <View style={styles.container}>
-            {!popUpStatus? <><CanSpendToday />
-            <UpcommingBills howCall='spend' /></> : <Popup/>
-        }</View>
+            {!popUpStatus ?
+                <>
+                    <CanSpendToday />
+                    <UpcommingBills howCall='spend' />
+                </> : <Popup />
+            }</View>
     )
 }
 

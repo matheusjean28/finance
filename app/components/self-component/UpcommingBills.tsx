@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     scrollviewContainer: {
     marginTop: 10,
     height: "75%",
-    width: '90%',         // força ocupar todo o espaço horizontal
+    width: '90%',     
     paddingHorizontal: 10, // opcional: espaçamento interno
     position: 'relative',
 }

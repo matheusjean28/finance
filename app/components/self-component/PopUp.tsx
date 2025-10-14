@@ -7,10 +7,10 @@ export default function Popup() {
   const { screen, setScreen, setPopUpStatus } = useAppContext();
 
   return (
-    <Modal visible={!!screen} transparent animationType="fade">
+    <Modal visible={!!screen} transparent={false} animationType="fade">
       <View style={styles.container}>
         <UpcommingBills howCall='popup' />
-        <Text onPress={() => { setScreen(null), setPopUpStatus(false) }}>Fechar</Text>
+        <Text style={styles.closemodal} onPress={() => { setScreen(null), setPopUpStatus(false) }}>Fechar</Text>
       </View>
     </Modal>
   );
@@ -19,10 +19,17 @@ export default function Popup() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, justifyContent: 'center', alignItems: 'center',
+     justifyContent: 'center', alignItems: 'center',
     width: '100%',
-    backgroundColor:"red",
-    height: "90%"
+    height:'100%'
   },
-
+  closemodal: {
+    padding: 10,
+    backgroundColor: '#007bff',
+    fontWeight:'600',
+    borderWidth: 1,
+    borderRadius: 9,
+    width: '90%', textAlign: 'center',
+    marginTop: 10
+  }
 })

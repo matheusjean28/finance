@@ -4,6 +4,7 @@ import Spend from '../components/Spend';
 
 // Context
 import React, { useState } from 'react';
+import AppContext from '../context/AppContext';
 import { useAppContext } from '../context/useAppContext';
 
 export default function Index() {
@@ -13,11 +14,11 @@ export default function Index() {
   console.log(popUpStatus)
 
   return (
-    // <AppContext.Provider value={{ screen, setScreen, popUpStatus,setPopUpStatus,bill }}>
+    <AppContext.Provider value={{ screen, setScreen, popUpStatus,setPopUpStatus,bill }}>
       <GestureHandlerRootView style={styles.container}>
         <Spend />
       </GestureHandlerRootView>
-    // </AppContext.Provider>
+    </AppContext.Provider>
   );
 }
 
