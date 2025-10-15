@@ -81,7 +81,8 @@ const objetivos = {
         name:'fundo emergencia',
         goal: 3000,
         achived: 399
-    },
+    },moto: { name: 'Moto', goal: 5000, achived: 2500 },
+  casa: { name: 'Casa', goal: 10000, achived: 10000 },
 
 }
 

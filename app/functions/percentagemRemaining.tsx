@@ -1,4 +1,10 @@
-export default function percentageAchieved(goal: number, achieved: number) {
+/**
+ * Forneça o valor menor primeiro
+ * 
+ * Como segundo parametro forneca o numero maior que vai ser o objetivo 
+ */
+
+export default function percentageAchieved(achieved: number, goal: number) {
   if (goal === 0) {
     return "Meta indefinida";
   }
