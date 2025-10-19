@@ -17,11 +17,16 @@ export default function TabLayout() {
       <Tabs.Screen name="index" options={{ title: 'Home' , 
         tabBarIcon: ({focused, color}) => <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
       }} />
-      
+        
+      <Tabs.Screen name="AddPage" options={{
+        title: 'Criar',
+        tabBarIcon: ({ focused, color }) => <Ionicons name={focused ? 'add-circle' : 'add'} color={color} size={24} />
+      }} />
+
       <Tabs.Screen name="about" options={{ title: 'About',
         tabBarIcon: ({focused, color}) => <Ionicons name={ focused?  'information-circle' : 'information-circle'} color={color} size={24} />
-
        }} />
+
     </Tabs>
   );
 }
