@@ -1,11 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import AddGoal from "../components/self-component/AddGoal";
 
 export default function AddPage(){
     return( 
         <View style={styles.container}>
-            <Text>
-                Add page
-            </Text>
+           <AddGoal />
         </View>
     )
 }

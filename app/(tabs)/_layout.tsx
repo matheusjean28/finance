@@ -23,8 +23,9 @@ export default function TabLayout() {
         tabBarIcon: ({ focused, color }) => <Ionicons name={focused ? 'add-circle' : 'add'} color={color} size={24} />
       }} />
 
-      <Tabs.Screen name="about" options={{ title: 'About',
-        tabBarIcon: ({focused, color}) => <Ionicons name={ focused?  'information-circle' : 'information-circle'} color={color} size={24} />
+      <Tabs.Screen name="about" options={{ title: 'About', 
+        tabBarIcon: ({focused, color}) => <Ionicons name={ focused?  'information-circle' : 'information-circle'} 
+        color={color} size={24}  />
        }} />
 
     </Tabs>
