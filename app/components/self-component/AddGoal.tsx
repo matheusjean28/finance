@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import Goal from './AddGoal/Goal';
 import Payment from './AddGoal/Payment';
 
 type Props = {
@@ -27,7 +28,7 @@ export default function AddGoal() {
             </View>
                 <View style={style.containerContent}>
                     {screenPayOrGoal == 'payment' ? 
-                    <Payment/>: ''}
+                    <Payment/>: <Goal/>}
                 </View>
 
         </View>
